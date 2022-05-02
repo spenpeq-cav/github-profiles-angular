@@ -9,10 +9,11 @@
   <form (ngSubmit)="getData($event)">
     <input
       type="text"
-      id=""
-      name=""
+      id="profile-name"
+      name="profile-name"
       placeholder="Search profile..."
       class="form"
+      value={{query}}
     />
     <button type="submit" class="btn">Search</button>
   </form>

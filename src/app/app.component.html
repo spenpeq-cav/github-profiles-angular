@@ -1,5 +1,5 @@
 <div>
-  <app-toolbar></app-toolbar>
+  <app-toolbar (sendProfileData)="getProfileData($event)"></app-toolbar>
   <div class="content" role="main">
     <h2>Profile Info</h2>
     <p>Info here</p>
@@ -22,6 +22,16 @@
       >
         <span>Projects</span>
       </button>
+    </div>
+
+    <div class="card card-large">
+      <img src={{avatar_url}} />
+      <h1>{{ name }}</h1>
+      <p>{{ bio }}</p>
+      <p>{{ location }}</p>
+      <p>{{ blog }}</p>
+      <p>Followers: {{ followers }}</p>
+      <p>Following: {{ following }}</p>
     </div>
   </div>
 </div>

@@ -23,8 +23,8 @@ export class ToolbarComponent implements OnInit {
   getData(event: any) {
     event.preventDefault();
     this.query = event.target[0].value
-    this.apiUrl = this.apiUrl + this.query
-    return this.http.get(this.apiUrl).subscribe((res: any) => {
+    
+    return this.http.get(this.apiUrl + this.query).subscribe((res: any) => {
       this.profileData = <ProfileData>{
         avatar_url : res.avatar_url,
         bio: res.bio,

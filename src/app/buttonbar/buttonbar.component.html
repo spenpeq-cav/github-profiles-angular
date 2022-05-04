@@ -1,0 +1,21 @@
+<div class="card-container">
+  <button
+    class="card card-small"
+    (click)="btnClick($event)"
+    tabindex="0"
+    [ngClass]="{ 'btn-active': profileBtnActive }"
+    value="profile"
+  >
+    Profile Info
+  </button>
+
+  <button
+    class="card card-small"
+    (click)="btnClick($event)"
+    tabindex="0"
+    [ngClass]="{ 'btn-active': reposBtnActive }"
+    value="projects"
+  >
+    Projects
+  </button>
+</div>

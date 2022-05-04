@@ -1,0 +1,17 @@
+<div *ngIf="profileDataLoaded" class="card card-large">
+  <img src="{{ avatar_url }}" />
+  <h1>{{ name }}</h1>
+  <p>{{ bio }}</p>
+  <p>{{ location }}</p>
+  <p>{{ blog }}</p>
+  <p>Followers: {{ followers }}</p>
+  <p>Following: {{ following }}</p>
+</div>
+<div *ngIf="reposDataLoaded" class="card card-large">
+  <div *ngFor="let repo of reposData; let i = index">
+    <p>
+      {{ repo.name }} | {{ repo.language }} | {{ repo.forks }} |
+      {{ repo.watchers }}
+    </p>
+  </div>
+</div>

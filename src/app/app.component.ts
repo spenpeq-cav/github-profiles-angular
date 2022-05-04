@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ProfileData } from './ProfileData';
 import { HttpClient } from '@angular/common/http';
 
-type Repos = {
+export type Repos = {
   name: string;
   forks: number;
   language: string;

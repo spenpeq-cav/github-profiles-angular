@@ -1,26 +1,17 @@
-<div>
-  <app-toolbar (sendQuery)="getQuery($event)"></app-toolbar>
-  <div class="content" role="main">
-    <h2>To start, search a profile in the toolbar.</h2>
-    <app-buttonbar></app-buttonbar>
-
-    <div *ngIf="profileDataLoaded" class="card card-large">
-      <img src="{{ avatar_url }}" />
-      <h1>{{ name }}</h1>
-      <p>{{ bio }}</p>
-      <p>{{ location }}</p>
-      <p>{{ blog }}</p>
-      <p>Followers: {{ followers }}</p>
-      <p>Following: {{ following }}</p>
-    </div>
-
-    <div *ngIf="reposDataLoaded" class="card card-large">
-      <div *ngFor="let repo of reposData; let i = index">
-        <p>
-          {{ repo.name }} | {{ repo.language }} | {{ repo.forks }} |
-          {{ repo.watchers }}
-        </p>
-      </div>
-    </div>
-  </div>
+<app-toolbar (sendQuery)="getQuery($event)"></app-toolbar>
+<div class="content" role="main">
+  <h2>To start, search a profile in the toolbar.</h2>
+  <app-buttonbar></app-buttonbar>
+  <app-infobox class="info-box"
+    [profileData]="profileData"
+    [reposData]="reposData"
+    [profileDataLoaded]="profileDataLoaded"
+    [reposDataLoaded]="reposDataLoaded"
+    [avatar_url]="avatar_url"
+    [bio]="bio"
+    [location]="location"
+    [blog]="blog"
+    [followers]="followers"
+    [following]="following"
+  ></app-infobox>
 </div>

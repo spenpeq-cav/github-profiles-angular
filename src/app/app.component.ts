@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ProfileData } from './ProfileData';
 import { HttpClient } from '@angular/common/http';
 
@@ -21,6 +21,9 @@ export class AppComponent {
   profileDataLoaded: boolean = false;
   reposDataLoaded: boolean = false;
 
+  profileActive: boolean = false;
+  projectsActive: boolean = false;
+
   profileData: {} = <ProfileData>{};
   reposData: Repos[] = [];
 
@@ -42,6 +45,13 @@ export class AppComponent {
     this.query = e;
     this.getProfileData();
     this.getReposData();
+  }
+
+  getProfileActive(e: boolean) {
+    this.profileActive = e
+  }
+  getProjectsActive(e: boolean) {
+    this.projectsActive = e
   }
 
   getProfileData() {

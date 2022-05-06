@@ -22,8 +22,10 @@ export class InfoboxComponent implements OnInit {
   @Input() repos_url: string = '';
   @Input() location?: string;
 
+  @Input() profileActive: boolean = false;
+  @Input() projectsActive: boolean = false;
+
   constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 }

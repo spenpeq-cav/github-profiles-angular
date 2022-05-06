@@ -1,7 +1,7 @@
 <app-toolbar (sendQuery)="getQuery($event)"></app-toolbar>
 <div class="content" role="main">
   <h2>To start, search a profile in the toolbar.</h2>
-  <app-buttonbar></app-buttonbar>
+  <app-buttonbar (sendProfileBtnActive)="getProfileActive($event)" (sendReposBtnActive)="getProjectsActive($event)"></app-buttonbar>
   <app-infobox class="info-box"
     [profileData]="profileData"
     [reposData]="reposData"
@@ -13,5 +13,7 @@
     [blog]="blog"
     [followers]="followers"
     [following]="following"
+    [profileActive]="profileActive"
+    [projectsActive]="projectsActive"
   ></app-infobox>
 </div>

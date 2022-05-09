@@ -1,6 +1,10 @@
-<div *ngIf="profileDataLoaded && profileActive" class="card card-large">
+<div *ngIf="profileDataLoaded" class="card card-large">
   <img src="{{ avatar_url }}" />
   <h1>{{ name }}</h1>
+  <p>{{ login }}</p>
+  <a href="{{ html_url }}" class="btn-small" target="_blank" rel="noreferrer">View on GitHub</a>
+</div>
+<div *ngIf="profileDataLoaded && profileActive" class="card card-large">
   <p>{{ bio }}</p>
   <p>{{ location }}</p>
   <p>{{ blog }}</p>

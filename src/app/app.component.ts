@@ -33,8 +33,10 @@ export class AppComponent {
   followers?: number;
   following?: number;
   name?: string;
+  login?: string;
   repos_url: string = '';
   location?: string;
+  html_url?: string;
   query: string = '';
 
   private apiUrl = 'https://api.github.com/users/';
@@ -57,6 +59,7 @@ export class AppComponent {
   getProfileData() {
     if (this.query !== '') {
       return this.http.get(this.apiUrl + this.query).subscribe((res: any) => {
+        console.log(res);
         this.profileData = <ProfileData>{
           avatar_url: res.avatar_url,
           bio: res.bio,
@@ -64,8 +67,10 @@ export class AppComponent {
           followers: res.followers,
           following: res.following,
           name: res.name,
+          login: res.login,
           repos_url: res.repos_url,
           location: res.location,
+          html_url: res.html_url
         };
         this.avatar_url = res.avatar_url;
         this.bio = res.bio;
@@ -73,8 +78,10 @@ export class AppComponent {
         this.followers = res.followers;
         this.following = res.following;
         this.name = res.name;
+        this.login = res.login;
         this.repos_url = res.repos_url;
         this.location = res.location;
+        this.html_url = res.html_url
 
         this.profileDataLoaded = true;
         if (this.profileActive === false && this.projectsActive === false) {

@@ -1,1 +1,25 @@
-
+.btn-small {
+  display: inline-block;
+  background: #4ea546;
+  color: rgb(40, 40, 40);
+  border: none;
+  padding: 10px 100px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: inherit;
+}
+.btn-small:focus {
+  outline: none;
+}
+.btn-small:active {
+  transform: scale(0.98);
+}
+.btn-small:hover {
+  background: #5fba56;
+  color: rgb(53, 53, 53);
+  transition: all 0.2s ease-in-out;
+}

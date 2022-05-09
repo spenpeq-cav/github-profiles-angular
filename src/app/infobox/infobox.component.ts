@@ -19,8 +19,10 @@ export class InfoboxComponent implements OnInit {
   @Input() followers?: number;
   @Input() following?: number;
   @Input() name?: string;
+  @Input() login?: string;
   @Input() repos_url: string = '';
   @Input() location?: string;
+  @Input() html_url?: string;
 
   @Input() profileActive: boolean = false;
   @Input() projectsActive: boolean = false;

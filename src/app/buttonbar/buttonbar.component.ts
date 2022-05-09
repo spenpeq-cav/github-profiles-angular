@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-buttonbar',
@@ -8,7 +8,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class ButtonbarComponent implements OnInit {
   @Output() sendProfileBtnActive: EventEmitter<boolean> = new EventEmitter();
   @Output() sendReposBtnActive: EventEmitter<boolean> = new EventEmitter();
-  profileBtnActive: boolean = false;
+  @Input() profileBtnActive: boolean = false;
   reposBtnActive: boolean = false;
   selector: string = '';
   constructor() {}

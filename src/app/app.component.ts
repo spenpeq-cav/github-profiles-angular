@@ -48,10 +48,10 @@ export class AppComponent {
   }
 
   getProfileActive(e: boolean) {
-    this.profileActive = e
+    this.profileActive = e;
   }
   getProjectsActive(e: boolean) {
-    this.projectsActive = e
+    this.projectsActive = e;
   }
 
   getProfileData() {
@@ -77,6 +77,9 @@ export class AppComponent {
         this.location = res.location;
 
         this.profileDataLoaded = true;
+        if (this.profileActive === false && this.projectsActive === false) {
+          this.profileActive = true;
+        }
       });
     } else return null;
   }
